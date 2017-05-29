@@ -1,0 +1,45 @@
+---
+- name: create my group
+  group:
+    name: "{{ standard_user }}"
+
+- name: test if user is in use
+  shell: users | grep {{ standard_user }}
+  register: user_active
+  ignore_errors: yes
+  
+- name: setup my account 
+  # hash generation:
+  #  mkpasswd --method=SHA-512
+  # or
+  #  pip install passlib
+  #  python -c "from passlib.hash import sha512_crypt; import getpass; print sha512_crypt.encrypt(getpass.getpass())"
+  user:
+    name: "{{ standard_user }}"
+    comment: "{{ standard_user }}"
+    uid: 1001
+    group: "{{ standard_user }}"
+    groups: dialout
+    password: "{{ standard_user_password_hash }}"
+    state: present
+  when: user_active.rc != 0
+  
+- name: add ssh public key
+  authorized_key: user={{ standard_user }} key="{{ standard_user_public_key }}"
+
+- name: copy validated sudoers file in place
+  template:
+    src: standard.sudoers.j2
+    dest: /etc/sudoers.d/"{{ standard_user }}"
+    validate: 'visudo -cf %s'
+
+- name: setup root account
+  user:
+    name: root
+    comment: root
+    # same as default_user
+    password: "{{ root_user_password_hash }}" 
+    state: present
+
+- name: add ssh public key to root account
+  authorized_key: user=root key="{{ root_user_public_key }}"

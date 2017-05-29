@@ -1,0 +1,10 @@
+---
+- hosts: all
+  vars:
+    standard_user: testuser
+    standard_user_password_hash: "$6$rounds=656000$tR8Bwh1kFwKu6WK3$/gTDNnXsozNc.qu/7s.VLATn7pRiB73Q3XvbIibEU2bMgOdH/5VoVPYYeV8fexyJM.K5vSCHP3NCVVgl74xi10"
+    standard_user_public_key: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC/PXuYAeJp+p4+V1w05GmJtcePgm3fx++dvglYgfMvo9BuOq2ARyyyHf+7e6GQNYXr3jgCB82AEMztDi4FdOj7L8DdMpYnWXFkNzEpBCm1CI+KuSMPkHl1qMPv9SrbCeMPQkhL4GbhWBWjVZnoeIo6Cwi5T3D+esXC2sblw00Mr7NcevP6y+9NCB1+XSZZCIrS7+202hdp2F0lYcRS/08SIsjwdlUtve0zL7YBv+RxKRer20gp+IAwOzVA4wAu0+yEtojE/bCZIoiEvEQgMEoXCYQsG18IyfHm4UkDrBU5chEwC1SWbpLY+3fJFtMr9ojtIh1VQknyWXJQunWmSsfZ daniel@noisy"
+    root_user_password_hash: "$6$rounds=656000$tR8Bwh1kFwKu6WK3$/gTDNnXsozNc.qu/7s.VLATn7pRiB73Q3XvbIibEU2bMgOdH/5VoVPYYeV8fexyJM.K5vSCHP3NCVVgl74xi10"
+    root_user_public_key:  "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC/PXuYAeJp+p4+V1w05GmJtcePgm3fx++dvglYgfMvo9BuOq2ARyyyHf+7e6GQNYXr3jgCB82AEMztDi4FdOj7L8DdMpYnWXFkNzEpBCm1CI+KuSMPkHl1qMPv9SrbCeMPQkhL4GbhWBWjVZnoeIo6Cwi5T3D+esXC2sblw00Mr7NcevP6y+9NCB1+XSZZCIrS7+202hdp2F0lYcRS/08SIsjwdlUUtve0zL7YBv+RxKRer20gp+IAwOzVA4wAu0+yEtojE/bCZIoiEvEQgMEoXCYQsG18IyfHm4UkDrBU5chEwC1SWbpLY+3fJFtMr9ojtIh1VQknyWXJQunWmSsfZ daniel@noisy"
+  roles:
+    - role: ansible-users
