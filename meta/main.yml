@@ -15,7 +15,7 @@ galaxy_info:
         - 7
     - name: Ubuntu
       versions:
-        - 16.04
+        - xenial
 
   galaxy_tags:
     - planet-winter

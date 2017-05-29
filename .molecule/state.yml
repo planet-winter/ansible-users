@@ -1,13 +1,9 @@
 ---
-converged: true
-created: true
+converged: null
+created: null
 default_platform: null
 default_provider: null
 driver: docker
 driver_config: {}
-hosts:
-  centos7:
-    groups: []
-  ubuntu16.04:
-    groups: []
+hosts: {}
 multiple_platforms: null
