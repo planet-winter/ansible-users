@@ -8,8 +8,6 @@ driver_config: {}
 hosts:
   centos7:
     groups: []
-  fedora25:
-    groups: []
   ubuntu16.04:
     groups: []
 multiple_platforms: null

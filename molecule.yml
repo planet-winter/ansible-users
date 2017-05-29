@@ -20,3 +20,10 @@ docker:
 #      image_version: latest
 #      privileged: True
 #      required: True
+provisioner:
+  name: ansible
+scenario:
+  name: default
+verifier:
+  name: testinfra
+          
