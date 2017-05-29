@@ -16,6 +16,9 @@ galaxy_info:
     - name: Ubuntu
       versions:
         - xenial
+    - name: Fedora
+      versions:
+        - 25
 
   galaxy_tags:
     - planet-winter

@@ -15,8 +15,8 @@ docker:
       image_version: latest
       privileged: True
       required: True
-    - name: fedora25
-      image: planetw/docker-fedora25-ansible
-      image_version: latest
-      privileged: True
-      required: True
+#    - name: fedora25
+#      image: planetw/docker-fedora25-ansible
+#      image_version: latest
+#      privileged: True
+#      required: True
